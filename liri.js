@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 var axios = require("axios");
 var request = require("request");
 
@@ -16,7 +17,7 @@ var moment = require('moment');
  var fs=require('fs');
 
 
- //var argv1=process.argv;
+ 
  var value=process.argv[2];
   
  
@@ -84,7 +85,7 @@ var moment = require('moment');
     
         console.log("Preview URL: " + songdata.preview_url);
     
-        
+        console.log("Album Name: " + songdata.album.name);
         console.log("=======================");
       
 
@@ -127,6 +128,7 @@ function dothis(){
     console.log(data);
     var dataArr = data.split(",");
     console.log(dataArr);
+    spotifythissong(dataArr[1]);
     console.log("======================");
   
   });
